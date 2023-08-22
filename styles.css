@@ -1,0 +1,376 @@
+body {
+  margin: 0px;
+  padding: 0px;
+  background-color: white;
+}
+
+body {
+  flex-direction: column;
+  display: flex;
+}
+
+.navbar {
+  position: relative;
+  width: 100%;
+  height: 716px;
+  background-image: url("../img/mountain_view_1.jpg"); /* Change the image path */
+  background-position: center;
+  background-size: cover;
+  text-align: right;
+  margin-bottom: 0%;
+  padding-top: 10%;
+  margin: 0%;
+  background-attachment: fixed;
+}
+
+.nav_buttons {
+  position: fixed;
+  -webkit-backdrop-filter: blur(6px);
+  /*makes any backdrop the navbar has passed blur*/
+  backdrop-filter: blur(6px);
+  opacity: 200%;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: transparent;
+  background-position: center;
+  background-size: cover;
+  text-align: right;
+  height: 103px; /* Adjust the height as needed */
+  z-index: 100; /* Ensure the navbar appears above other content */
+}
+
+.h2 {
+  text-align: center;
+}
+
+.navbar ul li {
+  list-style-type: none;
+  display: inline-block;
+  margin: 1%;
+  font-size: 2rem;
+  align-content: center;
+}
+
+.navbar ul li a {
+  text-decoration: solid;
+  color: black;
+  transition: 0.3s ease 0s;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-size: 1.3rem;
+}
+
+.navbar ul li a:hover {
+  text-decoration: underline;
+}
+
+.img_nav {
+  width: 18rem;
+  height: 8rem;
+  margin: -1.5%;
+  align-content: left;
+  float: left;
+  padding: -10%;
+}
+
+.center {
+  text-align: center;
+  font-size: 2rem;
+  color: whitesmoke;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-weight: 200;
+}
+
+.center_1 {
+  text-align: center;
+  font-size: 9rem;
+  color: whitesmoke;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.about_us {
+  position: relative;
+  height: 716px;
+  background-image: url("../img/pure-white-background-85a2a7fd.jpg"); /* Change the image path */
+  background-position: center;
+  background-size: cover;
+  overflow: hidden;
+  height: 40rem;
+  background-attachment: fixed;
+  float: left;
+}
+
+.about_us .parallax-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../img/mountain_view_1.jpg"); /* Change the image path */
+  background-position: center;
+  background-size: cover;
+  z-index: -1;
+  background-attachment: fixed;
+}
+
+.freedom {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 1.7rem;
+  height: 12rem;
+  width: 24rem;
+  background-color: transparent;
+  margin-right: 20%;
+  margin-left: 8%;
+  color: black;
+  padding: 20px;
+  float: left;
+}
+
+.text_freedom {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-size: 1rem;
+  height: 22rem;
+  width: 20rem;
+  float: center;
+  background-color: transparent;
+  margin-left: 55%;
+  color: black;
+  padding: 2%;
+  font-size: small;
+}
+
+.redirect_booking {
+  background-image: url(../img/maunga_club_cabin.jpg);
+  padding: auto;
+  width: 90rem;
+  height: 22rem;
+  align-self: center;
+  background-color: whitesmoke;
+}
+
+.text_redirect {
+  text-align: center;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  color: white;
+  font-size: medium;
+  padding: 2%;
+}
+
+.text_redirect_2 {
+  text-align: center;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  color: white;
+  font-size: medium;
+  padding: 2%;
+  font-size: large;
+}
+
+/*css for the buttton*/
+.redirect_form {
+  background-color: white;
+  height: 5rem;
+  width: 13rem;
+  box-shadow: 4px 8px black;
+  text-align: center;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  margin-left: 43%;
+  padding: -1%;
+  font-size: large;
+}
+
+.redirect_form:hover {
+  color: red;
+}
+
+.space {
+  /*extra space*/
+  height: 2rem;
+}
+
+.facts {
+  height: 40rem;
+  width: 100%;
+  background-color: rgb(32, 102, 102);
+}
+
+.header_facts {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-size: x-large;
+  color: white;
+  margin: 4%;
+}
+
+.text_facts {
+  width: 30rem;
+  height: 20rem;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-size: x-large;
+  font-weight: 100;
+  margin: 4%;
+  color: white;
+  padding: 0px;
+}
+
+.cabin {
+  float: right;
+  height: 25rem;
+  width: 30rem;
+  margin-right: 1%;
+  padding: 10%;
+}
+
+.member {
+  background-color: white;
+  height: 39rem;
+  width: 100%;
+}
+
+.header_member {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-size: larger;
+  color: black;
+  margin: 4%;
+}
+
+.text_member {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  width: 30rem;
+  margin: 4%;
+  font-size: large;
+}
+
+.become {
+  background-color: white;
+  height: 5rem;
+  width: 13rem;
+  box-shadow: 4px 8px black;
+  text-align: center;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  margin-left: 3%;
+  padding: -1%;
+  font-size: large;
+}
+
+.become:hover {
+  color: red;
+}
+
+.footer {
+  width: 100%;
+  height: 25rem;
+  background-color: rgb(81, 81, 81);
+}
+
+.image_foot {
+  width: 20rem;
+  height: 11rem;
+  padding: 1%;
+}
+
+.contact_header {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-size: larger;
+  color: white;
+  text-align: center;
+  margin: -9%;
+  padding-right: 0.1%;
+}
+
+.contact_info {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  color: white;
+  margin: 11%;
+  padding-left: 34%;
+}
+
+.credit {
+  text-align: center;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  color: white;
+  margin-bottom: 15%;
+}
+
+/*CSS for the page about the chalets*/
+.navbar_chalets {
+  position: relative;
+  width: 100%;
+  height: 716px;
+  background-image: url("../img/maunga_club_cabin.jpg"); /* Change the image path */
+  opacity: 89%;
+  background-position: center;
+  background-size: cover;
+  text-align: right;
+  margin-bottom: 0%;
+  padding-top: 10%;
+  margin: 0%;
+  background-attachment: fixed;
+}
+
+.navbar_chalets ul li {
+  list-style-type: none;
+  display: inline-block;
+  margin: 1%;
+  font-size: 2rem;
+  align-content: center;
+}
+
+.navbar_chalets ul li a {
+  text-decoration: solid;
+  color: black;
+  transition: 0.3s ease 0s;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-size: 1.3rem;
+}
+
+.navbar_chalets ul li a:hover {
+  text-decoration: underline;
+}
+
+.about_chalets {
+  height: 60rem;
+  width: auto;
+  background-color: white;
+}
+
+.chalet_img {
+  padding: 7%;
+  margin-bottom: 12%;
+}
+
+.chalet_header {
+  height: 60rem;
+  width: 23rem;
+  background-color: white;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-size: xx-large;
+  font-weight: 1000;
+  margin-left: 11%;
+  padding-top: 11%;
+}
+
+.chalet_text {
+  height: 60rem;
+  width: 10rem;
+  background-color: white;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-size: x-large;
+  font-weight: 100;
+  margin: 11%;
+}
