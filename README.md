@@ -9,3 +9,4 @@ commit #6 - solved button problem
 commit - #7 - added more text to the main page (index)
 commit - #8 - added footer
 commit - #9 - tested to see if all buttons and images appeared and worked on index page
+commit - #10 - added snow to all pages
