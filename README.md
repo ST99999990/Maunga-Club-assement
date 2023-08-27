@@ -12,3 +12,4 @@ commit  #9 - tested to see if all buttons and images appeared and worked on inde
 commit  #10 - added snow to all pages
 commit  #11 - worked on the second pages talking about chalets 
 commit #12 - finshed the second page
+commit #13 - worked on the 3rd and 4th page about buying chalets and becoming a member
