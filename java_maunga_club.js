@@ -1,48 +1,36 @@
-// When the user scrolls the page, execute myFunction
-window.onscroll = function () {
-  myFunction();
-};
+(function() {
 
-// Get the navbar
-var navbar = document.getElementById("navbar");
+	// Create input element for testing
+	var inputs = document.createElement('input');
+	
+	// Create the supports object
+	var supports = {};
+	
+	supports.autofocus   = 'autofocus' in inputs;
+	supports.required    = 'required' in inputs;
+	supports.placeholder = 'placeholder' in inputs;
 
-// Get the offset position of the navbar
-var sticky = navbar.offsetTop;
+	// Fallback for autofocus attribute
+	if(!supports.autofocus) {
+		
+	}
+	
+	// Fallback for required attribute
+	if(!supports.required) {
+		
+	}
 
-// Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
-function myFunction() {
-  if (window.pageYOffset >= sticky) {
-    navbar.classList.add("sticky");
-  } else {
-    navbar.classList.remove("sticky");
-  }
-}
+	// Fallback for placeholder attribute
+	if(!supports.placeholder) {
+		
+	}
+	
+	// Change text inside send button on submit
+	var send = document.getElementById('contact-submit');
+	if(send) {
+		send.onclick = function () {
+			this.innerHTML = '...Sending';
+		}
+	}
 
-window.addEventListener("scroll", function () {
-  var navbar = document.querySelector(".navbar");
-  if (window.scrollY > 100) {
-    // Adjust this value based on when you want the blur to start
-    navbar.classList.add("blur");
-  } else {
-    navbar.classList.remove("blur");
-  }
-});
-
-function createSnowflake() {
-  const snowflake = document.createElement("div");
-  snowflake.className = "snowflake";
-  snowflake.style.left = Math.random() * window.innerWidth + "px";
-  snowflake.style.animationDuration = Math.random() * 5 + 5 + "s";
-
-  snowflake.addEventListener("animationiteration", () => {
-    snowflake.style.left = Math.random() * window.innerWidth + "px";
-  });
-
-  document.querySelector(".snowflakes").appendChild(snowflake);
-}
-
-// Create a specified number of snowflakes
-const numberOfSnowflakes = 50;
-for (let i = 0; i < numberOfSnowflakes; i++) {
-  createSnowflake();
-}
+})();
