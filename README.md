@@ -13,3 +13,4 @@ commit  #10 - added snow to all pages
 commit  #11 - worked on the second pages talking about chalets 
 commit #12 - finshed the second page
 commit #13 - worked on the 3rd and 4th page about buying chalets and becoming a member
+commit #14 - removed snow from the 3rd and 4th page as scripting was interfeering with the HTML
