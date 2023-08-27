@@ -8,8 +8,8 @@
     <link rel="icon" href="../Maunga_Club_white.png" />
   </head>
   <body>
-    <div class="navbar">
-      <div class="nav_buttons_member">
+    <div class="navbar_booking">
+      <div class="nav_buttons">
         <!-- Corrected the class name -->
         <!-- Logo for the website -->
         <ul>
@@ -26,5 +26,94 @@
           <li><a class="name" href="../pages/member.html">MEMBERSHIP</a></li>
         </ul>
       </div>
+      <h1 class="center_booking">Maunga Club</h1>
+      <h2 class="center_book">become a member</h2>
+    </div>
+    <!-- Form -->
+    <div class="membership">
+      <form id="contact-form" action="/" method="post">
+        <h3>Membership Submission</h3>
+        <h4>Become a Maunga Club memeber.</h4>
+        <div>
+          <label>
+            <span>Name: (required)</span>
+            <input
+              placeholder="Please enter your name"
+              type="text"
+              tabindex="1"
+              required
+              autofocus
+            />
+          </label>
+        </div>
+        <div>
+          <label>
+            <span>Country of origin: (required)</span>
+            <input
+              placeholder="Please enter your country"
+              type="text"
+              tabindex="1"
+              required
+              autofocus
+            />
+          </label>
+        </div>
+        <div>
+          <label>
+            <span>Address: (required)</span>
+            <input
+              placeholder="Please enter your  address"
+              type="email"
+              tabindex="2"
+              required
+            />
+          </label>
+        </div>
+        <div>
+          <label>
+            <span>Job: (required)</span>
+            <input
+              placeholder="Please enter your job"
+              type="tel"
+              tabindex="3"
+              required
+            />
+          </label>
+        </div>
+
+        <div>
+          <label>
+            <span>Telephone: (required)</span>
+            <input
+              placeholder="Please enter your number"
+              type="tel"
+              tabindex="4"
+              required
+            />
+          </label>
+        </div>
+        <div>
+          <label>
+            <span>Message: (required)</span>
+            <textarea
+              placeholder="Include all the details you can"
+              tabindex="6"
+              required
+            ></textarea>
+      
+        </p>
+        <div>
+          <button
+            name="submit"
+            method="post"
+            action="thankyou.html"
+            type="submit"
+            id="contact-submit"
+          >
+            Submit Form
+          </button>
+        </div>
+      </form>
+    </div>
   </body>
 </html>
