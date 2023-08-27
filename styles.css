@@ -1,3 +1,7 @@
+html {
+  overflow-x: hidden;
+}
+
 body {
   margin: 0px;
   padding: 0px;
@@ -27,7 +31,7 @@ body {
   position: fixed;
   -webkit-backdrop-filter: blur(6px);
   /*makes any backdrop the navbar has passed blur*/
-  backdrop-filter: blur(6px);
+  backdrop-filter: blur(10px);
   opacity: 200%;
   top: 0;
   left: 0;
@@ -37,7 +41,7 @@ body {
   background-size: cover;
   text-align: right;
   height: 103px; /* Adjust the height as needed */
-  z-index: 100; /* Ensure the navbar appears above other content */
+  z-index: 1000; /* Ensure the navbar appears above other content */
 }
 
 .h2 {
@@ -182,6 +186,7 @@ body {
   margin-left: 43%;
   padding: -1%;
   font-size: large;
+  color: black;
 }
 
 .redirect_form:hover {
@@ -258,8 +263,9 @@ body {
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
   margin-left: 3%;
-  padding: -1%;
+  padding: 1%;
   font-size: large;
+  color: black;
 }
 
 .become:hover {
@@ -341,36 +347,290 @@ body {
   text-decoration: underline;
 }
 
-.about_chalets {
-  height: 60rem;
+.cabin_chaltes {
+  float: right;
+  height: 40rem;
+  width: 40rem;
+  margin-right: 1%;
+  padding: -1%;
+}
+
+.chalets {
+  background-image: url("../img/pure-white-background-85a2a7fd.jpg");
+  height: 40rem;
   width: auto;
-  background-color: white;
 }
 
-.chalet_img {
-  padding: 7%;
-  margin-bottom: 12%;
-}
-
-.chalet_header {
-  height: 60rem;
-  width: 23rem;
-  background-color: white;
+.Kereru {
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
-  font-size: xx-large;
-  font-weight: 1000;
-  margin-left: 11%;
-  padding-top: 11%;
+  margin-left: 4%;
+  padding: 1%;
 }
 
-.chalet_text {
-  height: 60rem;
-  width: 10rem;
-  background-color: white;
+.Kereru_text {
+  width: 30rem;
+  height: 10rem;
+  margin: 4%;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
   font-size: x-large;
-  font-weight: 100;
-  margin: 11%;
+}
+
+.Kereru_img {
+  height: 20rem;
+  width: 30rem;
+  float: right;
+  margin-right: 21%;
+  padding: 10%;
+}
+
+/*CSS for the booking page*/
+.navbar_booking {
+  position: relative;
+  width: 100%;
+  height: 40rem;
+  background-color: white; /* Change the image path */
+  background-position: center;
+  background-size: cover;
+  text-align: right;
+  margin-bottom: 0%;
+  padding-top: 10%;
+  margin: 0%;
+  background-attachment: fixed;
+}
+
+.navbar_booking ul li {
+  list-style-type: none;
+  display: inline-block;
+  margin: 1%;
+  font-size: 2rem;
+  align-content: center;
+}
+
+.navbar_booking ul li a {
+  text-decoration: solid;
+  color: black;
+  transition: 0.3s ease 0s;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-size: 1.3rem;
+}
+
+.navbar_booking ul li a:hover {
+  text-decoration: underline;
+}
+
+.center_book {
+  text-align: center;
+  font-size: 2rem;
+  color: black;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-weight: 200;
+}
+
+.center_booking {
+  text-align: center;
+  font-size: 9rem;
+  color: black;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/*booking form css*/
+.booking_form {
+  width: auto;
+  height: 60rem;
+  background-image: url(..);
+}
+
+div.elem-group {
+  margin: 20px 0;
+}
+
+.booking div.elem-group.inlined {
+  width: 19rem;
+  display: inline-block;
+  display: left;
+  margin-left: 1%;
+}
+
+label {
+  display: block;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  padding-bottom: 10px;
+  font-size: 1.25em;
+  margin-left: 40%;
+}
+
+input,
+select,
+textarea {
+  border-radius: 2px;
+  border: 2px 4px solid black;
+  box-sizing: border-box;
+  font-size: 1.25em;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  width: 20%;
+  padding: 10px;
+  margin-left: 40%;
+}
+
+div.elem-group.inlined input {
+  width: 29%;
+  display: center;
+  align-content: center;
+}
+
+textarea {
+  height: 150px;
+}
+
+hr {
+  border: 1px dotted #ccc;
+}
+
+button {
+  height: 50px;
+  background: black;
+  border: none;
+  color: white;
+  font-size: 1.25em;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  border-radius: 4px;
+  cursor: pointer;
+  float: center;
+  margin-left: 40rem;
+}
+
+button:hover {
+  border: 2px solid black;
+}
+
+/*
+HTML5 responsive contact form
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  -o-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+body {
+  font: 400 12px/1.625 "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #444;
+  background: #fff;
+}
+.wrapper {
+  max-width: 500px;
+  width: 95%;
+  margin: 0 auto;
+  position: relative;
+}
+#contact-form input[type="text"],
+#contact-form input[type="email"],
+#contact-form input[type="tel"],
+#contact-form input[type="url"],
+#contact-form textarea,
+#contact-form button[type="submit"] {
+  font: 400 12px/12px "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+#contact-form {
+  text-shadow: 0 1px 0 #fff;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  background: #d5d5d5;
+  padding: 25px;
+}
+#contact-form h3 {
+  color: #444;
+  display: block;
+  font-size: 28px;
+}
+#contact-form h4 {
+  margin: 5px 0 15px;
+  display: block;
+  font-size: 13px;
+}
+#contact-form label span {
+  cursor: pointer;
+  color: #000;
+  display: block;
+  margin: 5px 0;
+  font-weight: 900;
+}
+#contact-form input[type="text"],
+#contact-form input[type="email"],
+#contact-form input[type="tel"],
+#contact-form input[type="url"],
+#contact-form textarea {
+  width: 100%;
+  box-shadow: inset 0 1px 2px #ddd, 0 1px 0 #fff;
+  -webkit-box-shadow: inset 0 1px 2px #ddd, 0 1px 0 #fff;
+  -moz-box-shadow: inset 0 1px 2px #ddd, 0 1px 0 #fff;
+  border: 1px solid #ccc;
+  background: #fff;
+  margin: 0 0 5px;
+  padding: 10px;
+  border-radius: 5px;
+}
+#contact-form input[type="text"]:hover,
+#contact-form input[type="email"]:hover,
+#contact-form input[type="tel"]:hover,
+#contact-form input[type="url"]:hover,
+#contact-form textarea:hover {
+  -webkit-transition: border-color 0.3s ease-in-out;
+  -moz-transition: border-color 0.3s ease-in-out;
+  transition: border-color 0.3s ease-in-out;
+  border: 1px solid #aaa;
+}
+#contact-form textarea {
+  height: 100px;
+  max-width: 100%;
+}
+#contact-form button[type="submit"] {
+  cursor: pointer;
+  width: 100%;
+  border: none;
+  background: #58a532;
+  color: #fff;
+  margin: 0 0 5px;
+  padding: 10px;
+  border-radius: 5px;
+}
+#contact-form button[type="submit"]:hover {
+  -webkit-transition: background 0.3s ease-in-out;
+  -moz-transition: background 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
+  background-color: white;
+}
+#contact-form button[type="submit"]:active {
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+#contact-form input:focus,
+#contact-form textarea:focus {
+  outline: 0;
+  border: 1px solid #999;
+}
+::-webkit-input-placeholder {
+  color: #888;
+}
+:-moz-placeholder {
+  color: #888;
+}
+::-moz-placeholder {
+  color: #888;
+}
+:-ms-input-placeholder {
+  color: #888;
 }
