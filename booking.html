@@ -7,22 +7,89 @@
     <link rel="stylesheet" href="../css/styles.css" />
     <link rel="icon" href="../Maunga_Club_white.png" />
   </head>
-  <body><div class="navbar_booking">
-    <div class="nav_buttons">
-      <!-- Corrected the class name -->
-      <!-- Logo for the website -->
-      <ul>
-        <a href="../pages/index.html">
-          <img
-            class="img_nav"
-            src="../img/Maunga_Club_white.png"
-            alt="logo"
-          />
-        </a>
-        <!--the buttons for the nav bar-->
-        <li><a class="name" href="../pages/chalets.html">CHALETS</a></li>
-        <li><a class="name" href="../pages/booking.html">BUY</a></li>
-        <li><a class="name" href="../pages/member.html">MEMBERSHIP</a></li>
-      </ul>
-    </div></body>
+  <body>
+    <div class="navbar_booking">
+      <div class="nav_buttons">
+        <!-- Corrected the class name -->
+        <!-- Logo for the website -->
+        <ul>
+          <a href="../pages/index.html">
+            <img
+              class="img_nav"
+              src="../img/Maunga_Club_white.png"
+              alt="logo"
+            />
+          </a>
+          <!--the buttons for the nav bar-->
+          <li><a class="name" href="../pages/chalets.html">CHALETS</a></li>
+          <li><a class="name" href="../pages/booking.html">BUY</a></li>
+          <li><a class="name" href="../pages/member.html">MEMBERSHIP</a></li>
+        </ul>
+      </div>
+        <h1 class="center_booking">Maunga Club</h1>
+        <h2 class="center_book">book a chalet</h2>
+      </div>
+    
+      <!--booking form-->
+    <div class = "booking_form">
+      <form action="reservation.php" method="post">
+        <div class="elem-group">
+          <label for="name">Your Name</label>
+          <input type="text" id="name" name="visitor_name" placeholder="Your name" pattern=[A-Z\sa-z]{3,20} required>
+        </div>
+        <div class="elem-group">
+          <label for="email">Your E-mail</label>
+          <input type="email" id="email" name="visitor_email" placeholder="your.email@email.com" required>
+        </div>
+        <div class="elem-group">
+          <label for="phone">Your Phone</label>
+          <input type="tel" id="phone" name="visitor_phone" placeholder="012-345-6789" pattern=(\d{3})-?\s?(\d{3})-?\s?(\d{4}) required>
+        </div>
+        <hr>
+        <div class="elem-group inlined">
+          <label for="adult">Adults</label>
+          <input type="number" id="adult" name="total_adults" placeholder="total" min="1" required>
+        </div>
+        <div class="elem-group inlined">
+          <label for="child">Children</label>
+          <input type="number" id="child" name="total_children" placeholder="total" min="0" required>
+        </div>
+        <div class="elem-group inlined">
+          <label for="checkin-date">Check-in Date</label>
+          <input type="date" id="checkin-date" name="checkin" required>
+        </div>
+        <div class="elem-group inlined">
+          <label for="checkout-date">Check-out Date</label>
+          <input type="date" id="checkout-date" name="checkout" required>
+        </div>
+        <div class="elem-group">
+          <label for="room-selection">Select chlaet Preference</label>
+          <select id="room-selection" name="room_preference" required>
+              <option value="">Choose a chalet from the List</option>
+              <option value="connecting">Kereru</option>
+              <option value="adjoining">Pukeko</option>
+              <option value="adjacent">Kakapo</option>
+          </select>
+        </div>
+        <hr>
+        <div class="elem-group">
+          <label>proof of membership will be checked on-site</label>
+          
+        </div>
+        <button type="submit">Book The chalet</button>
+      </div>
+      <!--this div allows for there to be extra space-->
+ <div class = "space"></div>
+ <footer class="footer">
+  <img class="image_foot" src="../Maunga_Club_white.png" alt="logo" />
+  <div class="contact_header">CONTACT US</div>
+
+  <div class="contact_info">
+    maungaclub@maungaclub
+    <p>prasadtanav@gmail.com</p>
+    <p>st22160@ormiston.school.nz</p>
+  </div>
+  <div class="credit"><h4>Site made by Tanav Prasad</h4></div>
+</footer>
+  </body>
 </html>
