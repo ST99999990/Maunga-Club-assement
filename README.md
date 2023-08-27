@@ -7,4 +7,5 @@ commit #4 - added text to a div ( about us ) for the viewer to read
 commit #5 - found an error where the button's dont work
 commit #6 - solved button problem
 commit - #7 - added more text to the main page (index)
-coomit - #8 - added footer
+commit - #8 - added footer
+commit - #9 - tested to see if all buttons and images appeared and worked on index page
