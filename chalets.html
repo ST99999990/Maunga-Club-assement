@@ -25,18 +25,290 @@
           <li><a class="name" href="../pages/booking.html">BUY</a></li>
           <li><a class="name" href="../pages/member.html">MEMBERSHIP</a></li>
         </ul>
+        <div class="snow-embed w-embed">
+          <canvas id="snowCanvas"></canvas>
+        </div>
+        <script>
+          let _snowCanvas = function (obj) {
+            /**obj = {
+             *  //el must be given, the property with "?" ahead means that this property is alternative
+             *       el: element,
+             *       ?snowColor:   ,//color of snow, default:"#a6a6a6"
+             *       ?backgroundColor: ,//background color, default:"black"
+             *       ?maxSpeed: float number, //max speed of snow, default: 3.5
+             *       ?minSpeed: float number, //min speed of snow, default: 0.3
+             *       ?amount: number, //amount of snow, 150 default
+             *       ?rMax: number ,// max radius of snow, default: 4
+             *       ?rMin: number, //min  radius of snow, default: 1
+             *       ?width: number, // width of canvas, default: window.innerWidth
+             *       ?height: number, //height of canvas, default: window.innerHeight
+             *   }
+             **/
+
+            // check if given the right canvas element
+            var canvas = obj.el || document.getElementById("snowCanvas");
+            if (!canvas) {
+              console.log("please set the canvas element");
+              return;
+            }
+            if (canvas.tagName.toLowerCase() !== "canvas") {
+              console.log("please use this function on canvas element");
+              return;
+            }
+
+            canvas.style.backgroundColor = obj.background || "transparent";
+            //set background color
+            var fillStyle = obj.snowColor || "#eeeeee";
+            //color of snow
+            //check if given the right color config
+            if (
+              !_check(
+                _isColor,
+                [canvas.style.backgroundColor, fillStyle],
+                ["background color", "snow color"]
+              )
+            ) {
+              return;
+            }
+
+            var ctx = canvas.getContext("2d");
+
+            var maxSpeed = obj.maxSpeed || 0.9,
+              minSpeed = obj.minSpeed || 0.3,
+              count = obj.amount || 150, //count of snow
+              rMax = obj.rMax || 4, //max radius of snow
+              rMin = obj.rMin || 1,
+              W,
+              H;
+            //height and width of canvas;
+            setHeightWidth();
+            //initial height and width of canvas;
+
+            //check if given the right number
+            if (
+              !_check(
+                _isNumber,
+                [maxSpeed, minSpeed, count, rMax, rMin, W, H],
+                [
+                  "max speed 'maxSpeed'",
+                  "min speed 'minSpeed'",
+                  "amount",
+                  "max radius of snow 'rMax'",
+                  "min radius of snow 'rMin'",
+                  "width",
+                  "height",
+                ]
+              )
+            ) {
+              return;
+            }
+
+            function setHeightWidth() {
+              W = obj.width || window.innerWidth;
+              H = obj.height || window.innerHeight;
+              canvas.width = W;
+              canvas.height = H;
+            }
+
+            window.onresize = setHeightWidth;
+
+            var snowGroup = [];
+            var i;
+            for (i = 0; i < count; i++) {
+              snowGroup.push(initialEverySnow());
+            }
+
+            function initialEverySnow() {
+              return {
+                x: Math.random() * W - rMax,
+                y: Math.random() * H - rMax,
+                r: Math.random() * (rMax - rMin) + rMin,
+                s: Math.random() * (maxSpeed - minSpeed) + minSpeed,
+                xChangeRate: Math.random() * 1.6 - 0.8,
+              };
+            }
+
+            function draw() {
+              ctx.clearRect(0, 0, W, H);
+              ctx.beginPath();
+
+              var p;
+              for (var i = 0; i < snowGroup.length; i++) {
+                p = snowGroup[i];
+                ctx.fillStyle = fillStyle;
+                ctx.moveTo(p.x, p.y);
+                ctx.arc(p.x, p.y, p.r, 0, 2 * Math.PI);
+              }
+              ctx.fill();
+              update();
+            }
+
+            var delta = 0;
+            function update() {
+              //update position of every snow
+              delta += 0.01;
+              var p;
+              for (var i = 0; i < snowGroup.length; i++) {
+                p = snowGroup[i];
+                p.y += p.s;
+                p.x += Math.sin(delta + p.xChangeRate) * p.xChangeRate;
+                if (p.x > W + p.r || p.y > H + p.r || p.x < -p.r) {
+                  snowGroup[i] = initialEverySnow();
+                  var randomStartPostion = Math.ceil(Math.random() * 3);
+                  switch (randomStartPostion) {
+                    case 1:
+                      //drop from top
+                      snowGroup[i].x = Math.random() * W;
+                      snowGroup[i].y = -rMax;
+                      break;
+                    case 2:
+                      //start from left
+                      snowGroup[i].x = -rMax;
+                      snowGroup[i].y = Math.random() * H;
+                      break;
+                    case 3:
+                      //start from right
+                      snowGroup[i].x = W + rMax;
+                      snowGroup[i].y = Math.random() * H;
+                      break;
+                  }
+                }
+              }
+            }
+            setInterval(draw, 1000 / 60);
+          };
+
+          let _isColor = function (color) {
+            var color2 = "";
+            var el = document.createElement("i");
+            el.style.background = "";
+            el.style.background = color;
+            color2 = el.style.background;
+            if (color2.length === 0) {
+              return false;
+            }
+            el.style.borderColor = "";
+            return true;
+          };
+
+          let _check = (checkFunc, checkItemArr, warningStringArr) => {
+            for (let i = 0; i < checkItemArr.length; i++) {
+              if (!checkFunc(checkItemArr[i])) {
+                console.log(
+                  "_snowCanvas: please set the right " +
+                    warningStringArr[i] +
+                    "."
+                );
+                return false;
+              }
+            }
+            return true;
+          };
+
+          let _isNumber = (n) => {
+            return !isNaN(parseFloat(n)) && isFinite(n);
+          };
+
+          window.onload = _snowCanvas({
+            el: document.getElementById("snowCanvas"),
+            snowColor: "#eeeeee",
+            background: "transparent",
+            maxSpeed: 1,
+            minSpeed: 1,
+            width: "",
+            height: "",
+            amount: 150,
+            rMax: 4,
+            rMin: 1,
+          });
+        </script>
       </div>
       <h1 class="center_1">Chalets</h1>
       <h2 class="center">KAKAPO | PUKEKO | KERERU</h2>
     </div>
-    <div class="about_chalets">
-      <div class="chalet_header">Maunga club chalets</div>
-      <div class="text_chalets">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem alias
-        unde labore voluptate voluptates quas veniam doloribus similique error
-        incidunt nihil sunt ipsa, praesentium id quo doloremque in inventore
-        odit!
+    <div class="member">
+      <div class="header_member">
+        <h1>Our chalets</h1>
+      </div>
+      <img
+        class="cabin_chaltes"
+        src="../img/pukeko/chalet_exterior.jpg"
+        alt="chalet"
+      />
+      <div class="text_member">
+        <p>
+          Our chalets are nestled in New Zeland's scenic native bush. There are
+          no hotels, shooping or spas, just great slope-side accomidation with
+          an amazing atomsphere. lots of banter with other guests or you can be
+          with your family.
+        </p>
+        <p>Please note that our chalets are only for our members.</p>
+        <p>The Maunga Club has 3 chalets, Kereru, kakapo and our largest.</p>
       </div>
     </div>
+    <div class="chalets">
+      <div class="Kereru">
+        <img class="Kereru_img" src="../img/kereru/cabin_exterior.jpg" alt="" />
+        <h1>Kereru</h1>
+      </div>
+      <div class="Kereru_text">
+        Our Kereru chalet is perfect for families, the chalet has space for 2-4
+        people, it has a seperate living area, 2 bedrooms and argubly the best
+        choice for any family with children.
+        <p>features:</p>
+        <p>-perfect for families</p>
+        <p>-2 bedrooms</p>
+        <p>-fits 2-4 people</p>
+        <p>-separate living area</p>
+      </div>
+    </div>
+
+    <div class="Pukeko">
+      <div class="Kereru">
+        <img
+          class="Kereru_img"
+          src="../img/pukeko/chalet_exterior.jpg"
+          alt=""
+        />
+        <h1>Pukeko</h1>
+      </div>
+      <div class="Kereru_text">
+        Our Pukeko chalet is your standard chalet, great living area, lots of
+        space and able to house large families who would prefer a chalet to
+        themselves.
+        <p>features:</p>
+        <p>-perfect for large families</p>
+        <p>-comfortable for lots of people</p>
+        <p>-fits an average of 21 people</p>
+        <p>-lots of space</p>
+      </div>
+    </div>
+    <div class="Pukeko">
+      <div class="Kereru">
+        <img class="Kereru_img" src="../img/kakapo/cabin_exterior.jpg" alt="" />
+        <h1>Kakapo</h1>
+      </div>
+      <div class="Kereru_text">
+        Our Kakapo chalet is our largest chalet here at The Maunga Club, it
+        houses anywhere from 10 to 40 people, it has the largest living, kitchen
+        and dinning area and it comes with great amenities.
+        <p>features:</p>
+        <p>-perfect for large families</p>
+        <p>-comfortable for lots of people</p>
+        <p>-fits an average of 40 people</p>
+        <p>-our largest chalet</p>
+      </div>
+    </div>
+    <footer class="footer">
+      <img class="image_foot" src="../Maunga_Club_white.png" alt="logo" />
+      <div class="contact_header">CONTACT US</div>
+
+      <div class="contact_info">
+        maungaclub@maungaclub
+        <p>prasadtanav@gmail.com</p>
+        <p>st22160@ormiston.school.nz</p>
+      </div>
+      <div class="credit"><h4>Site made by Tanav Prasad</h4></div>
+    </footer>
   </body>
 </html>
